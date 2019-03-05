@@ -16,7 +16,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.6.0",
-        "phpunit/phpunit": "^8.0"
+        "ext-apache": "*"
     },
     "autoload": {
         "psr-4": {

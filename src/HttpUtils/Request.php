@@ -1,12 +1,26 @@
 <?php
+/**
+ * The file contains Request class
+ *
+ * PHP version 5
+ *
+ * @category Library
+ * @package  Cherry
+ * @author   Temuri Takalandze <takalandzet@gmail.com>
+ * @license  https://github.com/ABGEO07/cherry-request/blob/master/LICENSE MIT
+ * @link     https://github.com/ABGEO07/cherry-request
+ */
 
 namespace Cherry\HttpUtils;
 
 /**
  * Cherry project request class
  *
- * @package Cherry
- * @author Temuri Takalandze(ABGEO) <takalandzet@gmail.com>
+ * @category Library
+ * @package  Cherry
+ * @author   Temuri Takalandze <takalandzet@gmail.com>
+ * @license  https://github.com/ABGEO07/cherry-request/blob/master/LICENSE MIT
+ * @link     https://github.com/ABGEO07/cherry-request
  */
 
 class Request
@@ -14,7 +28,8 @@ class Request
     /**
      * Get request HTTP headers
      *
-     * @param null|array|string $key
+     * @param null|array|string $key Searched key or array of keys
+     *
      * @return array|string
      */
     public function getHeaders($key = null)
@@ -27,17 +42,21 @@ class Request
                     $value = isset($headers[$k]) ? $headers[$k] : null;
                     $return[$k] = $value;
                 }
-            } else
+            } else {
                 $return = isset($headers[$key]) ? $headers[$key] : null;
-        } else
+            }
+        } else {
             $return = $headers;
+        }
+
         return $return;
     }
 
     /**
      * Check if request has header
      *
-     * @param $key
+     * @param string $key Http header for searching
+     *
      * @return bool
      */
     public function hasHeader($key)
@@ -72,7 +91,8 @@ class Request
      */
     function getScheme()
     {
-        return stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
+        return stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ?
+            'https://' : 'http://';
     }
 
     /**
@@ -95,14 +115,17 @@ class Request
     /**
      * Get request query parameter by key
      *
-     * @param $key
+     * @param string $key Query parameter name
+     *
      * @return string|null
      */
     function getQuery($key)
     {
         $queryArray = $this->getQueryParams();
-        if (isset($queryArray[$key]))
+        if (isset($queryArray[$key])) {
             return $queryArray[$key];
+        }
+
         return null;
     }
 
@@ -115,10 +138,12 @@ class Request
     {
         $method = $this->getMethod();
         $return = null;
-        if ($method == 'GET')
+        if ($method == 'GET') {
             $return = $_GET;
-        else if ($method == 'POST')
+        } else if ($method == 'POST') {
             $return = $_POST;
+        }
+
         return $return;
     }
 }

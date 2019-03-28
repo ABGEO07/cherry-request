@@ -5,7 +5,7 @@
 
 - Change Namespace
 
-    Now you should use new namespace `Cherry\HttpUtils`
+    Now you should use new namespace `Cherry\HttpUtils\Request`
 
 - Validate code in PHP CodeSniffer
 

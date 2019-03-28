@@ -1,6 +1,6 @@
 <?php
 
-namespace Cherry;
+namespace Cherry\HttpUtils;
 
 /**
  * Cherry project request class

@@ -1,7 +1,6 @@
 # Cherry-request Changelog
 
 ## [v1.0.1](https://github.com/ABGEO07/cherry-request/releases/tag/v1.0.1 "v1.0.1") (2019-03-28)
-#### The first stable version
 
 - Change Namespace
 

@@ -20,7 +20,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 ## Class Request
 Import class
 ```php
-use Cherry\Request;
+use Cherry\HttpUtils\Request;
 ```
 Crete class new object
 ```php
